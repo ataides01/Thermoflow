@@ -17,25 +17,20 @@
         <p class="eyebrow">Linha tecnica</p>
         <h2>Conheca nossos produtos</h2>
     </div>
-    <div class="product-carousel" aria-label="Produtos Thermoflow em destaque">
-        <div class="product-carousel__viewport">
-            <div class="product-carousel__track">
+    <div class="product-slider" data-product-slider>
+        <button class="product-slider__arrow product-slider__arrow--prev" type="button" data-product-prev aria-label="Produto anterior"></button>
+        <div class="product-slider__viewport">
+            <div class="product-slider__track" data-product-track>
                 {% for product in products %}
-                <article class="product-card {% if forloop.counter == 3 %}product-card--featured{% endif %}">
-                    <div class="product-card__visual product-card__visual--{{ product.visual }}"></div>
-                    <h3>{{ product.name }}</h3>
-                    <p>{{ product.tag }}</p>
-                </article>
-                {% endfor %}
-                {% for product in products %}
-                <article class="product-card {% if forloop.counter == 3 %}product-card--featured{% endif %}" aria-hidden="true">
-                    <div class="product-card__visual product-card__visual--{{ product.visual }}"></div>
-                    <h3>{{ product.name }}</h3>
-                    <p>{{ product.tag }}</p>
-                </article>
+                    <article class="product-card {% if forloop.counter == 3 %}product-card--featured{% endif %}">
+                        <div class="product-card__visual product-card__visual--{{ product.visual }}"></div>
+                        <h3>{{ product.name }}</h3>
+                        <p>{{ product.tag }}</p>
+                    </article>
                 {% endfor %}
             </div>
         </div>
+        <button class="product-slider__arrow product-slider__arrow--next" type="button" data-product-next aria-label="Proximo produto"></button>
     </div>
 </section>
 
@@ -91,4 +86,8 @@
         <div class="handshake"></div>
     </div>
 </section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/product-slider.js?v=20260527-2"></script>
 {% endblock %}
