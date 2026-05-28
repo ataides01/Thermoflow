@@ -173,7 +173,7 @@ p { color: var(--muted); line-height: 1.6; }
 }
 
 .product-card {
-    flex: 0 0 calc((100% - (var(--slider-gap) * 3)) / 4);
+    flex: 0 0 calc((100% - (var(--slider-gap) * 2)) / 3);
     min-height: 232px;
     border: 2px solid var(--line);
     border-radius: 8px;
