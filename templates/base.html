@@ -1,0 +1,59 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Thermoflow{% endblock %}</title>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar__inner">
+            <div class="socials" aria-label="Redes sociais">
+                <span>wa</span><span>ig</span><span>in</span>
+            </div>
+            <a class="brand" href="{% url 'home' %}" aria-label="Thermoflow Home">
+                <span>Thermo</span><strong>flow</strong>
+            </a>
+            <div class="language" aria-label="Idiomas"><span>BR</span><span>EN</span></div>
+        </div>
+        <nav class="nav">
+            <a class="{% if active_page == 'home' %}is-active{% endif %}" href="{% url 'home' %}">Home</a>
+            <a class="{% if active_page == 'about' %}is-active{% endif %}" href="{% url 'about' %}">Quem Somos</a>
+            <a href="#solucoes">Solucoes</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer" id="contato">
+        <div class="footer__inner">
+            <a class="brand brand--footer" href="{% url 'home' %}">
+                <span>Thermo</span><strong>flow</strong><small>Sempre em movimento</small>
+            </a>
+            <div>
+                <h3>Localizacao</h3>
+                <p>Av. Alm. Ary Parreiras, Niteroi - RJ<br>24230-320</p>
+            </div>
+            <div>
+                <h3>Institucional</h3>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'about' %}">Quem somos</a>
+                <a href="#solucoes">Solucoes</a>
+                <a href="#produtos">Produtos</a>
+            </div>
+            <div>
+                <h3>Contato</h3>
+                <p>{{ contact_email }}<br>{{ contact_phone }}</p>
+                <div class="socials socials--footer"><span>yt</span><span>fb</span><span>in</span><span>ig</span></div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

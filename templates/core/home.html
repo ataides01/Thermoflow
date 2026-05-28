@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Thermoflow | Aquecimento industrial{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero__content">
+        <p class="eyebrow">Consistencia. Evolucao. Fluidez.</p>
+        <h1>Solucoes em <span>aquecimento</span> industrial</h1>
+        <p>Projetos completos para controle termico e eficiencia energetica, atendendo industrias onshore e offshore com alto desempenho, seguranca e durabilidade.</p>
+        <a class="button" href="#orcamento">Faca seu orcamento</a>
+    </div>
+</section>
+
+<section class="section" id="produtos">
+    <div class="section__title">
+        <p class="eyebrow">Linha tecnica</p>
+        <h2>Conheca nossos produtos</h2>
+    </div>
+    <div class="product-grid">
+        {% for product in products %}
+        <article class="product-card {% if forloop.counter == 3 %}product-card--featured{% endif %}">
+            <div class="product-card__visual product-card__visual--{{ forloop.counter }}"></div>
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.tag }}</p>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="about-band">
+    <div class="circle-photo"></div>
+    <div>
+        <p class="eyebrow">Quem somos?</p>
+        <h2>Especialistas em solucoes termicas para processos industriais.</h2>
+        <p>Somos especialistas em solucoes termicas, infraestrutura eletrica e automacao, oferecendo tecnologias inovadoras para otimizar processos industriais.</p>
+        <p>Nosso compromisso e entender as necessidades de cada cliente e entregar sistemas de aquecimento, controle termico e eficiencia energetica com seguranca, economia e alto desempenho.</p>
+        <a class="text-link" href="{% url 'about' %}">Conheca a Thermoflow</a>
+    </div>
+    <aside class="metric">
+        <strong>+150</strong>
+        <span>projetos realizados</span>
+        <p>Projetos realizados pela Thermoflow em diferentes segmentos industriais no Brasil.</p>
+    </aside>
+</section>
+
+<section class="client-strip">
+    <strong>Principais clientes:</strong>
+    <span>VALE</span>
+    <span>PETROBRAS</span>
+</section>
+
+<section class="split-section" id="solucoes">
+    <div>
+        <p class="eyebrow">Projetos sob medida</p>
+        <h2>Da engenharia ao comissionamento.</h2>
+        <p>A Thermoflow atua em toda a cadeia de valor do processo de venda, desde parcerias globais e planejamento ate supervisao, comissionamento e manutencao continua.</p>
+        <ul class="check-list">
+            {% for solution in solutions %}
+            <li>{{ solution }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="image-panel image-panel--project"></div>
+</section>
+
+<section class="quote-section" id="orcamento">
+    <form class="quote-form">
+        <label>Nome*<input type="text" name="nome"></label>
+        <label>Empresa*<input type="text" name="empresa"></label>
+        <label>E-mail*<input type="email" name="email"></label>
+        <label>Telefone*<input type="tel" name="telefone"></label>
+        <label>Mensagem<textarea name="mensagem"></textarea></label>
+        <button type="button">Enviar</button>
+    </form>
+    <div class="quote-copy">
+        <p class="eyebrow">Atendimento tecnico</p>
+        <h2>Faca seu orcamento</h2>
+        <p>Ao preencher o formulario com as informacoes necessarias, nossa equipe entrara em contato para entender o processo e indicar a melhor solucao.</p>
+        <div class="handshake"></div>
+    </div>
+</section>
+{% endblock %}

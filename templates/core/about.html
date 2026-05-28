@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Quem Somos | Thermoflow{% endblock %}
+
+{% block content %}
+<section class="page-hero page-hero--about">
+    <div>
+        <p class="eyebrow">Quem somos</p>
+        <h1>Tecnologia termica para industrias que nao podem parar.</h1>
+        <p>A Thermoflow desenvolve solucoes completas de aquecimento industrial, infraestrutura eletrica e automacao para operacoes que exigem eficiencia, seguranca e confiabilidade.</p>
+    </div>
+</section>
+
+<section class="split-section">
+    <div class="image-panel image-panel--about"></div>
+    <div>
+        <p class="eyebrow">Nossa atuacao</p>
+        <h2>Processos mais seguros, economicos e produtivos.</h2>
+        <p>Atendemos diversos segmentos com sistemas de aquecimento, controle termico e eficiencia energetica. A equipe combina conhecimento de engenharia, fornecedores especializados e acompanhamento tecnico em todas as etapas do projeto.</p>
+        <p>Do diagnostico inicial ao comissionamento, a proposta e entregar solucoes sob medida para reduzir perdas termicas, manter fluidos na temperatura ideal e aumentar a disponibilidade dos ativos.</p>
+    </div>
+</section>
+
+<section class="values-section">
+    <article>
+        <span>01</span>
+        <h3>Engenharia aplicada</h3>
+        <p>Projetos dimensionados de acordo com o processo, ambiente e requisitos de seguranca.</p>
+    </article>
+    <article>
+        <span>02</span>
+        <h3>Execucao completa</h3>
+        <p>Planejamento, fornecimento, supervisao, comissionamento e suporte tecnico.</p>
+    </article>
+    <article>
+        <span>03</span>
+        <h3>Resultado industrial</h3>
+        <p>Foco em desempenho, economia de energia, durabilidade e previsibilidade operacional.</p>
+    </article>
+</section>
+
+<section class="cta-band">
+    <div>
+        <p class="eyebrow">Proxima etapa</p>
+        <h2>Transforme necessidade tecnica em projeto executavel.</h2>
+    </div>
+    <a class="button" href="{% url 'home' %}#orcamento">Solicitar orcamento</a>
+</section>
+{% endblock %}
