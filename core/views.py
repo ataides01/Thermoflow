@@ -2,10 +2,14 @@ from django.shortcuts import render
 
 
 PRODUCTS = [
-    {"name": "Mangueira aquecida", "tag": "Processos com fluido"},
-    {"name": "Manta termica", "tag": "Isolamento industrial"},
-    {"name": "Traco eletrico", "tag": "Aquecimento controlado"},
-    {"name": "Caixa de ligacao", "tag": "Infraestrutura eletrica"},
+    {"name": "Mangueira aquecida", "tag": "Processos com fluido", "visual": "hose"},
+    {"name": "Manta termica", "tag": "Isolamento industrial", "visual": "blanket"},
+    {"name": "Traco eletrico", "tag": "Aquecimento controlado", "visual": "trace"},
+    {"name": "Caixa de ligacao", "tag": "Infraestrutura eletrica", "visual": "box"},
+    {"name": "Painel de controle", "tag": "Automacao termica", "visual": "panel"},
+    {"name": "Sensor de temperatura", "tag": "Monitoramento preciso", "visual": "sensor"},
+    {"name": "Cabos aquecedores", "tag": "Alta performance", "visual": "cable"},
+    {"name": "Isolamento removivel", "tag": "Manutencao facilitada", "visual": "insulation"},
 ]
 
 SOLUTIONS = [
